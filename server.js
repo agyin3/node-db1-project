@@ -7,7 +7,7 @@ const server = express();
 server.use(express.json());
 
 server.get('/api/accounts', (req, res) => {
-    db.find(req.body)
+    db.find(req.query)
         .then(accounts => {
             res.status(200).json(accounts)
         })
